@@ -25,17 +25,21 @@
             font-size: 0.9rem;
             margin: 3px;
         }
-        /* 統一限制卡片圖片高度，並確保不變形 */
         .card-img-height {
-            height: 200px; /* 一列四個卡片時，200px 比例最完美 */
+            height: 200px;
             object-fit: cover;
             width: 100%;
+        }
+        .skill-card {
+            transition: transform 0.2s;
+        }
+        .skill-card:hover {
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 
-    <!-- 導覽列 (Navbar) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Yu-Hong's</a>
@@ -53,7 +57,6 @@
         </div>
     </nav>
 
-    <!-- |01 自我介紹 區塊 -->
     <header id="about" class="hero-section text-center">
         <div class="container">
             <img src="images/about.jpg" alt="林宇宏的本人照片" class="rounded-circle profile-img mb-3 shadow">
@@ -70,7 +73,6 @@
         </div>
     </header>
 
-    <!-- |01 教育背景 區塊 -->
     <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-4 fw-bold"><i class="bi bi-mortarboard-fill me-2"></i>教育背景</h2>
@@ -95,12 +97,11 @@
         </div>
     </section>
 
-    <!-- |02 經驗與專業技能 區塊 -->
     <section class="py-5" id="skills">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-laptop me-2"></i>經驗 & 專業技能</h2>
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-lg-5">
                     <div class="p-4 border rounded-3 h-100 bg-light shadow-sm">
                         <h4 class="fw-bold mb-3"><i class="bi bi-briefcase-fill text-primary me-2"></i>實務經驗 & 幹部歷練</h4>
                         <div class="mb-4">
@@ -115,47 +116,85 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                
+                <div class="col-lg-7">
                     <div class="p-4 border rounded-3 h-100 bg-light shadow-sm">
                         <h4 class="fw-bold mb-3"><i class="bi bi-code-slash text-success me-2"></i>專業技能</h4>
-                        <p class="text-muted small">依據課堂實作與自主開發經驗之實力評級：</p>
+                        <p class="text-muted small mb-4">依據課堂實作與自主開發經驗之核心實力範疇：</p>
                         
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">網頁開發技術 (HTML, CSS, Bootstrap)</label>
-                            <div class="progress" style="height: 18px;">
-                                <div class="progress-bar bg-success" style="width: 85%">85%</div>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm p-3 skill-card">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-globe2 text-primary fs-4 me-2"></i>
+                                        <h6 class="fw-bold mb-0">網頁開發技術</h6>
+                                    </div>
+                                    <div class="small text-secondary mb-2">掌握前端架構與響應式開發</div>
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary skill-badge">HTML5</span>
+                                        <span class="badge bg-primary-subtle text-primary skill-badge">CSS3</span>
+                                        <span class="badge bg-primary-subtle text-primary skill-badge">Bootstrap 5</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm p-3 skill-card">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-terminal text-info fs-4 me-2"></i>
+                                        <h6 class="fw-bold mb-0">程式語言</h6>
+                                    </div>
+                                    <div class="small text-secondary mb-2">邏輯編寫與數據資料分析</div>
+                                    <div>
+                                        <span class="badge bg-info-subtle text-info-emphasis skill-badge">Python</span>
+                                        <span class="badge bg-info-subtle text-info-emphasis skill-badge">C++</span>
+                                        <span class="badge bg-info-subtle text-info-emphasis skill-badge">JavaScript</span>
+                                        <span class="badge bg-info-subtle text-info-emphasis skill-badge">PHP</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm p-3 skill-card">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-database border-0 text-warning fs-4 me-2"></i>
+                                        <h6 class="fw-bold mb-0">資料庫管理</h6>
+                                    </div>
+                                    <div class="small text-secondary mb-2">關聯式資料庫建置與優化</div>
+                                    <div>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis skill-badge">MySQL</span>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis skill-badge">SQL Server</span>
+                                        <span class="badge bg-warning-subtle text-warning-emphasis skill-badge">SQL 查詢</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="card h-100 border-0 shadow-sm p-3 skill-card">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-git text-secondary fs-4 me-2"></i>
+                                        <h6 class="fw-bold mb-0">版本控制與部署</h6>
+                                    </div>
+                                    <div class="small text-secondary mb-2">專案管理、協作與雲端託管</div>
+                                    <div>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis skill-badge">Git</span>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis skill-badge">GitHub</span>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis skill-badge">GitHub Pages</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">程式語言 (Python 資料分析 / Java / PHP)</label>
-                            <div class="progress" style="height: 18px;">
-                                <div class="progress-bar bg-info text-dark" style="width: 75%">75%</div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">資料庫管理與建置 (MySQL, SQL)</label>
-                            <div class="progress" style="height: 18px;">
-                                <div class="progress-bar bg-warning text-dark" style="width: 80%">80%</div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">版本控制與部署 (Git / GitHub Pages)</label>
-                            <div class="progress" style="height: 18px;">
-                                <div class="progress-bar bg-secondary" style="width: 70%">70%</div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- |03 專案作品區：一列 4 個獨立的 RWD 卡片 -->
     <section class="py-5 bg-light" id="portfolio">
         <div class="container">
             <h2 class="text-center mb-5 fw-bold"><i class="bi bi-folder-fill me-2"></i>專案作品 & 活動櫥窗</h2>
             <div class="row g-4">
-                <!-- 第一塊：RWD 個人網頁設計 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
                         <img src="images/index.png" class="card-img-top card-img-height" alt="個人網頁專案">
@@ -172,7 +211,6 @@
                     </div>
                 </div>
 
-                <!-- 第二塊：虛擬AI智慧醫療 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
                         <img src="images/project.jpg" class="card-img-top card-img-height" alt="創新應用專案">
@@ -189,7 +227,6 @@
                     </div>
                 </div>
 
-                <!-- 第三塊：全國人文社會永續創新應用競賽 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
                         <img src="images/SDGS.jpg" class="card-img-top card-img-height" alt="永續創新應用競賽">
@@ -210,7 +247,6 @@
                     </div>
                 </div>
 
-                <!-- 第四塊：校隊活動與得獎紀錄 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 shadow-sm">
                         <img src="images/pool.jpg" class="card-img-top card-img-height" alt="校隊活動照片">
@@ -232,11 +268,9 @@
         </div>
     </section>
 
-    <!-- |04 專業見解區塊 -->
     <section class="py-5" id="articles">
         <div class="container">
             <div class="row g-5">
-                <!-- 左側：資管專業見解文章 -->
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-4"><i class="bi bi-file-earmark-text-fill text-primary me-2"></i>專業見解 (Articles)</h3>
                     <div class="card mb-3 shadow-sm">
@@ -250,7 +284,6 @@
                                     <p class="card-text small text-muted">
                                         生成式技術雖然能自動化產出代碼與數據報告，但它無法取代人類具備的「情境洞察力」、「倫理同理心」與「核心戰略解讀」。資管系的核心價值就在於此...
                                     </p>
-                                    <!-- 修正：移除傳統網頁連結，改為點擊後彈出視窗（Modal） -->
                                     <button type="button" class="btn btn-link text-decoration-none small fw-bold p-0 text-start" data-bs-toggle="modal" data-bs-target="#articleModal">
                                         閱讀完整資管觀點 →
                                     </button>
@@ -259,7 +292,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- 右側：獲獎榮譽 -->
                 <div class="col-md-6">
                     <h3 class="fw-bold mb-4"><i class="bi bi-trophy-fill text-warning me-2"></i>獲獎與榮譽 (Awards)</h3>
                     <ul class="list-group list-group-flush shadow-sm border rounded-3">
@@ -277,7 +309,6 @@
         </div>
     </section>
 
-    <!-- 頁尾 (Footer) -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mb-1">© 2026 林宇宏 - 國立聯合大學資管系前端網頁期末專案</p>
@@ -285,7 +316,6 @@
         </div>
     </footer>
 
-    <!-- 彈出視窗 1：撞球隊得獎紀錄彈出視窗 (Modal) -->
     <div class="modal fade" id="poolAwardModal" tabindex="-1" aria-labelledby="poolAwardModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md">
             <div class="modal-content">
@@ -299,7 +329,7 @@
                     <p class="small text-muted mb-2">榮獲項目：大專男子組團體賽 — <strong>全國第三名</strong></p>
                     <hr>
                     <p class="small lh-base text-secondary">
-                        身為校方撞球隊副隊長，在備賽期間除了高強度的日常集訓與戰術研討外，我也積極投入於隊員們的狀態管理與賽程行政協調。透過高度的團隊凝聚力與永不放棄的運動家精神，聯大撞球隊最終在全國大專院校中脫穎而出，斬獲季軍殊榮！這份成就展現了我們團隊合作的豐碩成果與抗壓執行力。
+                        身為撞球隊副隊長，在備賽期間除了高強度的日常集訓與戰術研討外，我也積極投入於隊員們的狀態管理與賽程行政協調。透過高度的團隊凝聚力與永不放棄的運動家精神，聯大撞球隊最終在全國大專院校中脫穎而出，斬獲第三名殊榮！這份成就展現了我們團隊合作的豐碩成果與抗壓執行力。
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -309,28 +339,66 @@
         </div>
     </div>
 
-    <!-- 新增 彈出視窗 2：專業見解完整內容彈出視窗 (Modal) -->
     <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- 使用 modal-lg 讓長文閱讀更舒適 -->
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
                 <div class="modal-header bg-dark text-white">
                     <h5 class="modal-title fw-bold" id="articleModalLabel"><i class="bi bi-file-earmark-post text-primary me-2"></i>資管專題評論</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-start px-4 py-4">
-                    <img src="images/AI.jpg" class="img-fluid rounded mb-3 w-100" style="max-height: 300px; object-fit: cover;" alt="資管趨勢配圖">
-                    <h4 class="fw-bold text-dark mb-3">AI 不會真的取代人類，但善用 AI 的人將會取代不會的人</h4>
-                    <p class="text-muted small mb-3">作者：林宇宏 | 發表於：國立聯合大學資訊管理學系個人專案</p>
-                    <hr>
-                    <div class="lh-lg text-secondary small">
-                        <p>隨著大型語言模型與生成式 AI 的爆炸性成長，社會上出現了大量「技術將全面取代人類職位」的焦慮言論。然而，從資訊管理的工程思維與系統架構角度切入，AI 本質上是一次高效率的<b>技術槓桿演進</b>，而非人類大腦的替代品。</p>
-                        <p class="my-3">人工智慧固然強大，能在數秒內產出成千上萬行的代碼、自動化生成複雜的數據圖表。但它存在著致命的局限性：<b>它缺乏對複雜現實商業脈絡的解讀能力、沒有情感同理心，更無法在資訊不對稱的環境下進行具備倫理與道德考量的戰略決策。</b></p>
-                        <p>資管系（Information Management）的核心價值在此刻更加凸顯。資管的真諦從來就不是純粹的「資訊技術(I)」，而是如何將技術導入並優化「商業管理(M)」流程。在未來，重複性的工程操作確實會由 AI 協作完成，但<b>「精確定義問題、解構企業痛點、引導 AI 生成正確解方，並進行最終系統評估」</b>的跨領域架構人才，將會成為數位轉型中各家企業爭奪的核心資產。</p>
-                        <p class="mt-3 fw-bold text-primary">結論：巨變風暴中，平庸的技術產出者會被淘汰，而能靈活駕馭 AI 作為生產力工具、具備技術與管理平衡思維的資管人，將會脫穎而出！</p>
+                <div class="modal-body bg-light px-4 py-4">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <img src="images/AI.jpg" class="card-img-top" style="max-height: 280px; object-fit: cover;" alt="資管趨勢配圖">
+                        <div class="card-body bg-white rounded-bottom">
+                            <h3 class="fw-bold text-dark mb-2">AI 不會真的取代人類，但善用 AI 的人將會取代不會的人</h3>
+                            <div class="d-flex text-muted small align-items-center flex-wrap">
+                                <span class="me-3"><i class="bi bi-person-fill me-1"></i>作者：林宇宏</span>
+                                <span><i class="bi bi-journal-bookmark-fill me-1"></i>發表於：國立聯合大學資管系專案</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm p-4 bg-white">
+                                <blockquote class="blockquote border-start border-primary border-4 ps-3 mb-0">
+                                    <p class="fs-6 lh-lg text-dark mb-0">
+                                        隨著大型語言模型與生成式 AI 的爆炸性成長，社會上出現了大量「技術將全面取代人類職位」的焦慮言論。然而，從資訊管理的工程思維與系統架構角度切入，AI 本質上是一次高效率的<b>技術槓桿演進</b>，而非人類大腦的替代品。
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100 p-4 bg-white">
+                                <h5 class="fw-bold text-danger mb-3"><i class="bi bi-exclamation-triangle-fill me-2"></i>AI 的致命局限性</h5>
+                                <p class="card-text small lh-lg text-secondary mb-0">
+                                    人工智慧固然強大，能在數秒內產出成千上萬行的代碼、自動化生成複雜的數據圖表。但它存在著無法跨越的邊界：<b>它缺乏對複雜現實商業脈絡的解讀能力、沒有情感同理心，更無法在資訊不對稱的環境下進行具備倫理與道德考量的戰略決策。</b>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100 p-4 bg-white">
+                                <h5 class="fw-bold text-success mb-3"><i class="bi bi-shield-check-fill me-2"></i>資管人的不敗優勢</h5>
+                                <p class="card-text small lh-lg text-secondary mb-0">
+                                    資管系（Information Management）的真諦從來就不是純粹的「資訊技術(I)」，而是如何將技術導入並優化「商業管理(M)」流程。在未來，重複性的工程操作確實會由 AI 協作完成，但<b>「精確定義問題、解構企業痛點、引導 AI 生成正確解方」</b>的跨領域架構人才，將會成為數位轉型中各家企業爭奪的核心資產。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm p-4 bg-dark text-white text-center">
+                                <h6 class="fw-bold text-warning mb-2"><i class="bi bi-lightbulb-fill me-1"></i>未來展望總結</h6>
+                                <p class="fs-6 mb-0 px-2">
+                                    巨變風暴中，平庸的技術產出者會被淘汰，而能靈活駕馭 AI 作為生產力工具、具備技術與管理平衡思維的資管人，將會脫穎而出！
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">關閉文章</button>
+                <div class="modal-footer bg-white border-top-0 justify-content-center">
+                    <button type="button" class="btn btn-secondary btn-sm px-4" data-bs-dismiss="modal">關閉文章</button>
                 </div>
             </div>
         </div>
